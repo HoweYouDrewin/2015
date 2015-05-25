@@ -1,0 +1,12 @@
+print "Welcome to our guess the number game!"
+import random
+number = random.randrange(0,101)
+print number
+
+guess1 = raw_input ("Guess a number between 1 and 100:")
+if guess1 < number:
+    print "Higher"
+elif guess1 > number:
+    print"Lower"
+else:
+    print "You got it!"
