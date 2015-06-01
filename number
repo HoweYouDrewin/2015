@@ -1,12 +1,22 @@
-print "Welcome to our guess the number game!"
-import random
-number = random.randrange(0,101)
-print number
-
-guess1 = raw_input ("Guess a number between 1 and 100:")
-if guess1 < number:
-    print "Higher"
-elif guess1 > number:
-    print"Lower"
-else:
-    print "You got it!"
+print "Welcome to our guess the number game!" 
+import random 
+KeepPlaying = True
+while KeepPlaying:
+    number = random.randrange(0,101) 
+    while True:
+        guess1 = int(raw_input ("Guess a number between 1 and 100:"))
+        if guess1 > number: 
+            print "Lower"
+        elif guess1 < number: 
+            print "Higher"
+        elif guess1 == number:
+            print "You got it!"
+            Correct = raw_input ("Would you like to play again? (yes/no)")
+            if Correct == "yes":
+                KeepPlaying = True
+            else:
+                KeepPlaying = False
+                print "Bye"
+            break
+        else: 
+            print "Try Again" 
